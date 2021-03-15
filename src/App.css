@@ -21,3 +21,13 @@
 .Todo.complete {
   background-color: lightgreen;
 }
+
+.Todo .del {
+  position: absolute;
+  top: -2px;
+  right: 3px;
+  text-decoration: none;
+  color: red;
+  font-family: sans-serif;
+  font-size: 20px;
+}

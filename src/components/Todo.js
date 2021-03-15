@@ -7,6 +7,13 @@ export default function ToDo(props) {
       onClick={(e) => props.toggleComplete(props.index)}
     >
       <p>{props.todo.title}</p>
+      <a
+        href="/deleteTodo"
+        className="del"
+        onClick={(e) => props.deleteTodo(e, props.index)}
+      >
+        x
+      </a>
     </div>
   );
 }
