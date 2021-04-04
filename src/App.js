@@ -8,18 +8,32 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: [
-        {
-          title: "Do something",
-          completed: false,
-        },
-        {
-          title: "DO something else",
-          completed: true,
-        },
-      ],
+      todos: [],
     };
   }
+
+  componentDidMount() {
+    fetch("https://limitless-journey-65898.herokuapp.com/todos")
+      .then((res) => res.json())
+      .then((res) => this.setsState({ todos: res }));
+  }
+
+  createTodo = (e) => {
+    e.preventDefault();
+    let newTodo = { title: e.target.title.value, completed: false };
+    this.setState(
+      {
+        todos: [...this.state.todos, newTodo],
+      },
+      () => {
+        fetch("https://limitless-journey-65898.herokuapp.com/todos")
+          {
+            method: "POST",
+            body: JSON.stringify(newTodo),
+          };
+      }
+    );
+  };
 
   toggleComplete = (index) => {
     let todos = this.state.todos;
@@ -39,7 +53,7 @@ class App extends React.Component {
       <main className="App">
         <h1>ToDo Application</h1>
         <h2>{this.state.todos.length}</h2>
-        <TodoForm />
+        <TodoForm createTodo={this.createTodo} />
         <section className="todos">
           {this.state.todos.map((todo, index) => (
             <Todo
@@ -55,4 +69,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;

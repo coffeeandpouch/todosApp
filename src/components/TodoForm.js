@@ -1,10 +1,15 @@
 import React from "react";
 
-export default function TodoForm() {
+export default function TodoForm(props) {
   return (
     <div className="TodoForm">
-      <form>
-        <input type="text" name="title" aria-label="Todo Title" />
+      <form onSubmit={(e) => props.createTodo(e)}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          aria-label="Todo Title"
+        />
         <input
           type="submit"
           name="submit"
