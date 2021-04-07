@@ -1,9 +1,10 @@
 import React from "react";
 import Todo from "./components/Todo";
+import TodoForm from "./components/TodoForm";
 
 import "./App.css";
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -19,6 +20,16 @@ class App extends React.Component {
       ],
     };
   }
+
+  createTodo = (e) => {
+    e.preventDefault();
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        { title: e.target.title.value, completed: false },
+      ],
+    });
+  };
 
   toggleComplete = (index) => {
     let todos = this.state.todos;
@@ -38,6 +49,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Todo Application</h1>
         <h2>{this.state.todos.length}</h2>
+        <TodoForm createTodo={this.createTodo} />
         <section className="todos">
           {this.state.todos.map((todo, index) => (
             <Todo
