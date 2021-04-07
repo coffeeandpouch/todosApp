@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.todos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Todo {
+  min-width: 300px;
+  border: 1px solid gray;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Todo.complete {
+  background-color: lightgreen;
+}
