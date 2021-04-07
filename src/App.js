@@ -47,7 +47,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Todo Application</h1>
+        <h1>To Do List</h1>
         <h2>{this.state.todos.length}</h2>
         <TodoForm createTodo={this.createTodo} />
         <section className="todos">
