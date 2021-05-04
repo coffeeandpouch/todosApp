@@ -5,12 +5,15 @@
 
 .todos {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .Todo {
   min-width: 300px;
+  max-width: 400px;
   border: 1px solid gray;
   margin: 10px;
   cursor: pointer;

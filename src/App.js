@@ -8,16 +8,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: [
-        {
-          title: "Do something",
-          completed: false,
-        },
-        {
-          title: "Do something else",
-          completed: true,
-        },
-      ],
+      todos: [],
     };
   }
 
