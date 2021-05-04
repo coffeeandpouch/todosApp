@@ -16,7 +16,7 @@ export default function TodoForm(props) {
           value="submit"
           aria-label="Submit New Todo"
         ></input>
-      </form>{" "}
+      </form>
     </div>
   );
 }
